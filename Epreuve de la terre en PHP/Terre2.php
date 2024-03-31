@@ -30,11 +30,11 @@ for ($i = $longueur - 1; $i >= 0; $i--) {
         // Si un slash '/' est trouvé, cela indique le début du chemin et donc la fin du nom du fichier. On sort de la boucle.
         break;
     }
-    // Ajoute le caractère courant au début de $fileName. Cela permet de reconstruire le nom du fichier dans l'ordre correct.
+    // a chaque boucle Ajoute le caractère courant au début de $fileName. Cela permet de reconstruire le nom du fichier dans l'ordre correct.
     $fileName = $chemin[$i] . $fileName;
 }
 
-// Affiche le nom du fichier reconstruit avec un saut de ligner pour eviter d'avoir un % dans le terminal lors de l'affichage.
+// Affiche le nom du fichier reconstruit avec un saut de ligne pour eviter d'avoir un % dans le terminal lors de l'affichage.
 echo $fileName . "\n";
 
 // "longueur - 1" est utilisé pour obtenir l'indice du dernier caractère de la chaîne, et pas le numéro du caractère lui-même.
