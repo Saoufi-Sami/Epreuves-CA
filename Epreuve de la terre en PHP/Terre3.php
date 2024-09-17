@@ -18,12 +18,12 @@ if ($argc > 1) {
     // Ok, on a des arguments en plus. $argc nous dit combien au total, mais on ne compte pas le nom du script.
     // On commence à 1 parce que 0, c'est le nom de notre script, et ça, on n'a pas besoin de le répéter.
     for ($i = 1; $i < $argc; $i++) {
-        // On affiche chaque truc en plus, un par ligne. $argv[$i] c'est le truc actuel qu'on regarde.
+        // On affiche chaque caractere en plus, un par ligne. $argv[$i] c'est le caractere actuel qu'on regarde.
         echo $argv[$i] . "\n"; // "\n" c'est pour passer à la ligne après avoir affiché le truc.
     }
 } else {
-    // Si on arrive ici, c'est qu'on a pas reçu des arguments en plus. Juste le nom du script, et c'est tout.
-    echo "Aucun truc supplémentaire donné.\n";
+    // Si on arrive ici, c'est qu'on a pas reçu d'arguments en plus. Juste le nom du script, et c'est tout.
+    echo "Aucun arguments supplémentaire donné.\n";
 }
 
 
