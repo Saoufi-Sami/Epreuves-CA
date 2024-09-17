@@ -20,7 +20,7 @@ Attention : votre programme devra utiliser une boucle.
 
 // D'abord, on vérifie si quelqu'un a donné un argument quand ils ont lancé notre programme.
 if (isset($argv[1])) {
-    // Si oui, on prend cet argument et on le met dans une boîte qu'on appelle $argument.
+    // Si oui, on prend cet argument et on le met dans une variable qu'on appelle $argument.
     $argument = $argv[1];
 
     // Maintenant, on regarde si notre lettre est bien entre 'a' et 'z' (donc, une petite lettre).
@@ -28,7 +28,7 @@ if (isset($argv[1])) {
     if ($argument >= 'a' && $argument <= 'z') {
         // Super, c'est une petite lettre. Maintenant, on va montrer toutes les lettres depuis celle-là jusqu'à 'z'.
         for ($i = $argument; $i <= 'z'; $i++) {
-            // On montre la lettre actuelle.
+            // On montre la lettre actuelle avec les autres a la suite .
             echo $i;
             // Mais, si on est arrivé à 'z', on doit faire deux choses :
             if ($i == 'z') {
