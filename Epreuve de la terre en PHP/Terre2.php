@@ -18,24 +18,38 @@ $chemin = '/Terre2.php';
 // En gros, tant que dans chemin tu trouves un caractère, rajoute 1 à longueur. Cela inclut tout : lettres, chiffres, points, et slashs.
 $longueur = 0;
 while (isset($chemin[$longueur])) {
-    $longueur++;
+    $longueur++; // Incrémente la longueur jusqu'à ce que nous atteignions la fin de la chaîne
 }
 
-// Initialise la variable pour stocker le nom du fichier. Ce nom est construit en parcourant le chemin à l'envers.
-$fileName = '';
+$fileName = ''; // Initialise $fileName comme chaîne vide pour commencer à y ajouter des caractères
 
-// Parcourt la chaîne $chemin en sens inverse, à partir du dernier caractère.
-for ($i = $longueur - 1; $i >= 0; $i--) { 
-    if($chemin[$i] == '/') {
-        // Si un slash '/' est trouvé, cela indique le début du chemin et donc la fin du nom du fichier. On sort de la boucle.
-        break;
+// Étape 2 : Parcours du chemin à l'envers
+for ($i = $longueur - 1; $i >= 0; $i--) {
+    // Lorsque l'on rencontre un slash '/', cela indique la fin du nom du fichier, donc on arrête
+    if ($chemin[$i] == '/') {
+        break; 
     }
-    // a chaque boucle Ajoute le caractère courant au début de $fileName. Cela permet de reconstruire le nom du fichier dans l'ordre correct.
+
+    // Étape 3 : Ajouter le caractère courant devant le contenu actuel de $fileName
+    // Cela crée l'effet de "construction inversée" du nom du fichier
     $fileName = $chemin[$i] . $fileName;
+    // Exemple de concaténation :
+    // Si $fileName = "p" et qu'on ajoute "h", alors $fileName devient "hp".
+    // À chaque itération, le caractère courant est ajouté en début de $fileName
+    // ce qui inverse l'ordre des caractères par rapport à leur position dans le chemin initial.
+
+    // Pourquoi les caractères s'inversent ?
+    // Cela se produit parce qu'on utilise la concaténation "ajouter devant" avec :
+    // $fileName = $chemin[$i] . $fileName;
+    // Cela met chaque nouveau caractère à **gauche** du contenu actuel de $fileName, inversant ainsi l'ordre des caractères.
+    // Par exemple, si $fileName = "p" et qu'on ajoute "h", $fileName devient "hp".
+    // Si on faisait l'inverse (ajouter à la fin), ce serait comme ça :
+    // $fileName = $fileName . $chemin[$i]; // Ce qui préserve l'ordre initial.
+
 }
 
-// Affiche le nom du fichier reconstruit avec un saut de ligne pour eviter d'avoir un % dans le terminal lors de l'affichage.
-echo $fileName . "\n";
+// Affichage du résultat final (nom du fichier)
+echo $fileName . "\n"; // Affiche le nom du fichier récupéré
 
 // "longueur - 1" est utilisé pour obtenir l'indice du dernier caractère de la chaîne, et pas le numéro du caractère lui-même.
 // Cela permet d'accéder au dernier caractère valide de la chaîne, car les indices commencent à 0.
