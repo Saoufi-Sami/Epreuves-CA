@@ -40,7 +40,7 @@ else if ($argc != 2) {
 // la deuxieme couche c'est filter_var() avec FILTER_VALIDATE_INT qui va encore plus filtrer et  permet de vérifier que la valeur est **un entier valide**
 // Cela signifie qu'il doit s'agir d'un nombre entier sans virgule ni caractère non numérique.
 else if (!is_numeric($argv[1]) || filter_var($argv[1], FILTER_VALIDATE_INT) === false) {
-    echo "Tu ne me la mettras pas à l’envers avec ton mot je veux un chiffre.\n";
+    echo "Tu ne me la mettras pas à l’envers  je veux un entier .\n";
 } 
 else {
     // Convertir l'argument en entier
