@@ -24,6 +24,10 @@ while (isset($chemin[$longueur])) {
 $fileName = ''; // Initialise $fileName comme chaîne vide pour commencer à y ajouter des caractères
 
 // Étape 2 : Parcours du chemin à l'envers
+// La longueur de la chaîne est 11, car elle contient 11 caractères (ex. "/Terre2.php").
+// Cependant, comme l'indexation commence à 0, l'indice du dernier caractère est 10, 
+// soit $longueur - 1. C'est pourquoi on utilise $longueur - 1 pour commencer la boucle
+// à partir du dernier caractère et remonter vers le début.
 for ($i = $longueur - 1; $i >= 0; $i--) {
     // Lorsque l'on rencontre un slash '/', cela indique la fin du nom du fichier, donc on arrête
     if ($chemin[$i] == '/') {
