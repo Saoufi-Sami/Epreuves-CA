@@ -38,7 +38,8 @@ else if ($argc != 2) {
 // donc elle accepte des chiffres avec des virgules comme "6.5", "-3.2" mais aussi des chaînes numériques comme "123" mais pa de chaines de characteres.
 
 // la deuxieme couche c'est filter_var() avec FILTER_VALIDATE_INT qui va encore plus filtrer et  permet de vérifier que la valeur est **un entier valide**
-// Cela signifie qu'il doit s'agir d'un nombre entier sans virgule ni caractère non numérique.
+// Cela signifie qu'il doit s'agir d'un nombre entier sans virgule ni caractère non numérique. pour la filter var on voi bien dans l'explication de cette fonction qu'il faut lui passer un filtre et ici le filtre c'est le 
+//FILTER_VALIDATE_INT
 else if (!is_numeric($argv[1]) || filter_var($argv[1], FILTER_VALIDATE_INT) === false) {
     echo "Tu ne me la mettras pas à l’envers  je veux un entier .\n";
 } 
