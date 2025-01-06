@@ -29,7 +29,7 @@ Fonctions interdites:
 if ($argc == 1) {
     echo "Tu ne me la mettras pas à l’envers il n’y a rien.\n";
 } 
-// Vérifie si le nombre total d'arguments n'est pas exactement 2 en gros si c'est 2 c que ya un le script + 1 argument donc c'est ok  mais la on regarde si c different de 2 donc le scprit + largument c'est que tu en a mis +.
+// Vérifie si le nombre total d'arguments n'est pas exactement 2 en gros si c'est 2 c que ya un le script + 1 argument donc c'est ok  mais la on regarde si c different de 2 donc le scprit + largument c'est que tu en a mis + par ex 3 ou 4.
 else if ($argc != 2) {
     echo "Il faut passer un seul argument de type entier .\n";
 } 
