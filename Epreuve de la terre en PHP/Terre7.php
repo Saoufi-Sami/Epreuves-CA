@@ -16,7 +16,7 @@ Fonctions interdites:
 */
 
 if ( $argc != 2) {  // Si le nombre d'arguments n'est pas exactement 2 (le script + 1 chaîne), on affiche une erreur
-    echo "Erreur : Vous devez fournir une chaîne en argument.";
+    echo "Erreur : Vous devez fournir une chaîne en argument.\n";
 } else {
 
     $arguments = $argv[1];  // On récupère l'argument fourni (la chaîne à inverser)
