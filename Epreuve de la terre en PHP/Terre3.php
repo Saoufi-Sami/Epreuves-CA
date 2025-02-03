@@ -15,7 +15,7 @@ solide
 
 // Ici, on regarde si on a reçu des arguments en plus quand on a lancé le script.
 // $argc donne le nombre d'arguments passés au script, y compris le nom du script lui-même.
-// Il te donne un nombre total d'arguments. Il commence toujours à 1 car l'index 0 est réservé au nom du script.
+// Il te donne un nombre total d'arguments. Il commence toujours à 1 car c'est le  nom du script.
 if ($argc > 1) {
     // Ok, on a des arguments en plus. $argc nous dit combien au total, mais on ne compte pas le nom du script.
     // On commence à 1 parce que 0, c'est le nom de notre script, et ça, on n'a pas besoin de le répéter.
