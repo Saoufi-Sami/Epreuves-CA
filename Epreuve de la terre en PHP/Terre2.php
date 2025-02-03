@@ -14,8 +14,15 @@ crevette.js
 // Supposons que le chemin soit défini en dur pour cet exemple. Dans un cas réel, on utiliserait $_SERVER['SCRIPT_NAME'].
 $chemin = '/Terre2.php';
 
+
+
 // Cette boucle compte tous les caractères dans $chemin, en partant du premier (le slash '/') jusqu'au dernier ('p'). 
 // En gros, tant que dans chemin tu trouves un caractère, rajoute 1 à longueur. Cela inclut tout : lettres, chiffres, points, et slashs.
+// pk on met [$longueur] en parenthese de chemin ? en gros on met le l'indice de longueur a ce moment la pour a chaque iteration la boucle verifie qu'il ya toujours un indice de dispo 
+// Première itération : Tant que $chemin[0] existe (/), on rajoute 1 à $longueur.
+// Deuxième itération : Tant que $chemin[1] existe (T), on rajoute 1 à $longueur.
+// Quand ça s'arrête ? Dès qu'on atteint un index qui n'existe pas dans $chemin, isset($chemin[$longueur]) retourne false, et la boucle s'arrête.
+
 $longueur = 0;
 while (isset($chemin[$longueur])) {
     $longueur++; // Incrémente la longueur jusqu'à ce que nous atteignions la fin de la chaîne

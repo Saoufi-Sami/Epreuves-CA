@@ -25,7 +25,7 @@ Fonctions interdites:
 */
 
 
-// Vérifie si aucun argument n'est passé (seulement le nom du script en gros si ya un agrument c'est seuelement le script)
+// Vérifie si aucun argument n'est passé (seulement le nom du script en gros si il ya un agrument c'est seulement le script)
 if ($argc == 1) {
     echo "Tu ne me la mettras pas à l’envers il n’y a rien.\n";
 } 
@@ -40,6 +40,13 @@ else if ($argc != 2) {
 // la deuxieme couche c'est filter_var() avec FILTER_VALIDATE_INT qui va encore plus filtrer et  permet de vérifier que la valeur est **un entier valide**
 // Cela signifie qu'il doit s'agir d'un nombre entier sans virgule ni caractère non numérique. pour la filter var on voi bien dans l'explication de cette fonction qu'il faut lui passer un filtre et ici le filtre c'est le 
 //FILTER_VALIDATE_INT
+//En gros, on a une double protection :
+//is_numeric() : Vérifie si c'est un nombre.
+// filter_var(..., FILTER_VALIDATE_INT) : Vérifie si c'est un entier pur.
+// Si une des deux conditions échoue, on affiche l'erreur. 
+//is_numeric() : C'est la première porte. Elle laisse passer tous les nombres, qu'ils soient entiers (comme 5) ou décimaux (comme 3.14), mais elle rejette les caractères non numériques (comme "abc" ou "xyz").
+//filter_var($argv[1], FILTER_VALIDATE_INT) : C'est la deuxième porte. Elle rejette les nombres décimaux (comme 3.14) et ne laisse passer que les entiers (comme 5 ou -2). Donc, cette porte va s'assurer que seul un entier valide passe, rejetant par exemple 3.14 ou 5,5.
+
 else if (!is_numeric($argv[1]) || filter_var($argv[1], FILTER_VALIDATE_INT) === false) {
     echo "Tu ne me la mettras pas à l’envers  je veux un entier .\n";
 } 
