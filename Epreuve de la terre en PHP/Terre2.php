@@ -18,7 +18,7 @@ $chemin = '/Terre2.php';
 
 // Cette boucle compte tous les caractères dans $chemin, en partant du premier (le slash '/') jusqu'au dernier ('p'). 
 // En gros, tant que dans chemin tu trouves un caractère, rajoute 1 à longueur. Cela inclut tout : lettres, chiffres, points, et slashs.
-// pk on met [$longueur] en parenthese de chemin ? en gros on met le l'indice de longueur a ce moment la pour a chaque iteration la boucle verifie qu'il ya toujours un indice de dispo 
+// pk on met [$longueur] en parenthese de chemin ? en gros on met l'indice de longueur a ce moment la pour a chaque iteration la boucle verifie qu'il ya toujours un indice de dispo 
 // Première itération : Tant que $chemin[0] existe (/), on rajoute 1 à $longueur.
 // Deuxième itération : Tant que $chemin[1] existe (T), on rajoute 1 à $longueur.
 // Quand ça s'arrête ? Dès qu'on atteint un index qui n'existe pas dans $chemin, isset($chemin[$longueur]) retourne false, et la boucle s'arrête.
@@ -31,7 +31,7 @@ while (isset($chemin[$longueur])) {
 $fileName = ''; // Initialise $fileName comme chaîne vide pour commencer à y ajouter des caractères
 
 // Étape 2 : Parcours du chemin à l'envers
-// La longueur de la chaîne est 11, car elle contient 11 caractères (ex. "/Terre2.php").
+// La longueur de la chaîne est 11, car elle contient 11 caractères ("/Terre2.php").
 // Cependant, comme l'indexation commence à 0, l'indice du dernier caractère est 10, 
 // soit $longueur - 1. C'est pourquoi on utilise $longueur - 1 pour commencer la boucle
 // à partir du dernier caractère et remonter vers le début.
