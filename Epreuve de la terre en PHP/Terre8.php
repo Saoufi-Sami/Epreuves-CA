@@ -39,7 +39,7 @@ else if (is_numeric($argv[1])) {
     // on récupère l’argument dans une variable.
     $arguments = $argv[1];
 
-    // On initialise la variable $nombre (pas nécessaire, mais tu l’as fait comme ça).
+    // On initialise la variable $nombre (pas nécessaire).
     $nombre = "";
 
     // On stocke dans $nombre la longueur de la chaîne de caractères passée en argument.
