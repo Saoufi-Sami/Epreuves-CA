@@ -23,6 +23,8 @@ for ($c = 'A'; $c <= 'Z'; $c++) {
     if ($c == 'Z') break;
 }
 
+// Sauter une ligne à la fin pour éviter l'affichage du signe pourcentage ou autre caractère indésirable
+echo "\n";
 
 
 
